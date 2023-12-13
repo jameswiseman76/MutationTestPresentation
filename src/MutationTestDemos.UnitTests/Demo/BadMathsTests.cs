@@ -1,11 +1,11 @@
-using MutationTestDemos.Demo1;
+using MutationTestDemos.Demo;
 
 namespace MutationTestDemos.UnitTests.Demo1;
 
 [TestClass]
-public class MathsTests
+public class BadMathsTests
 {
-    public Maths _underTest = new();
+    public BadMaths _underTest = new();
 
     [TestMethod]
     public void Add_WhenPassedTwoIntegers_ReturnsExpectedSum()

@@ -1,24 +1,24 @@
-﻿namespace MutationTestDemos.Demo1;
+﻿namespace MutationTestDemos.Demo;
 
-public class Maths
+public class BadMaths
 {
     public int Add(int x, int y)
-    {
-        return x + y;
-    }
-
-    public int Subtract(int x, int y)
     {
         return x - y;
     }
 
+    public int Subtract(int x, int y)
+    {
+        return x + y;
+    }
+
     public int Multiply(int x, int y)
     {
-        return x * y;
+        return x / y;
     }
 
     public int Divide(int x, int y)
     {
-        return x / y;
+        return x * y;
     }
 }

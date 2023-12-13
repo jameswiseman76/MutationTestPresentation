@@ -29,9 +29,9 @@ public class DuplicateCallsTest
         _mockCustomerRepository.Verify(
             m => m.Update(
                 It.Is<Customer>(c => c.Id == customer.Id)));
-
         // Notes:
-        // Times.Exactly(2)
+        // Times.Exactly(1)
         // Not picking up missing fields: not perfect!
+        //It.Is<Customer>(c => c.Id == customer.Id)), Times.Exactly(1));
     }
 }
