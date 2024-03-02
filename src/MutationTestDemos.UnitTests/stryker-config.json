@@ -1,0 +1,13 @@
+{
+  "stryker-config": {
+    "project-info": {
+      "name": "github.com/jameswiseman76/MutationTestPresentation",
+      "version": "main"
+    },
+    "since": {
+      "enabled": true,
+      "target": "DemoBaselineTag2"
+    },
+    "reporters": ["dashboard"]
+  }
+}
