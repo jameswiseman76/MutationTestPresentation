@@ -15,7 +15,7 @@ jobs:
           git config --global user.email "james.wiseman@gmail.com"
           # Add any other custom Git configurations you need     
       - uses: actions/checkout@v4
-      - uses: stryker-mutator/github-action@v0.0.2
+      - uses: stryker-mutator/github-action@v0.0.1
         with:
           testProject: "src/MutationTestDemos.UnitTests/" # required
           breakAt: "75" # Optional
