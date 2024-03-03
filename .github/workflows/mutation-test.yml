@@ -1,5 +1,5 @@
 name: mutation-test
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: ${{ github.actor }} is runing mutation tests
 on: 
   push:
     branches: [ "main" ]
@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: stryker-mutator/github-action@v0.0.1
         with:
-          testProject: "src/MutationTestDemos.UnitTest/" # required
+          testProject: "src/MutationTestDemos.UnitTests/" # required
           breakAt: "75" # Optional
       - uses: actions/upload-artifact@v3
         with:
