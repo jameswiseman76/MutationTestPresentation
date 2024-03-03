@@ -1,18 +1,20 @@
-on:
-  # Run the mutation tests when changes are pushed to the main branch
+name: mutation-test
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: 
   push:
-    branches:
-      - 'main'
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 jobs:
-  mutation-test:
-    uses: actions/checkout@v3
-
-    uses: stryker-mutator/github-action@v0.0.1
-      with:
-        testProject: "BusinessLogic.Test/" # required
-        breakAt: "75" # Optional
-
-    uses: actions/upload-artifact@v3
-      with:
-        name: html-report
-        path: ${{github.workspace}}/src/MutationTestDemos.UnitTests/StrykerOutput/**/**/*.html
+  mutation-test-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: stryker-mutator/github-action@v0.0.1
+        with:
+          testProject: "src/MutationTestDemos.UnitTest/" # required
+          breakAt: "75" # Optional
+      - uses: actions/upload-artifact@v3
+        with:
+          name: html-report
+          path: ${{github.workspace}}/src/MutationTestDemos.UnitTests/StrykerOutput/**/**/*.html
