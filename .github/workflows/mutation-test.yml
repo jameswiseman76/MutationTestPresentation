@@ -9,6 +9,11 @@ jobs:
   mutation-test-code:
     runs-on: ubuntu-latest
     steps:
+      - name: Set Git configuration
+        run: |
+          git config --global user.name "jameswiseman76"
+          git config --global user.email "james.wiseman@gmail.com"
+          # Add any other custom Git configurations you need     
       - uses: actions/checkout@v4
       - uses: stryker-mutator/github-action@v0.0.1
         with:
